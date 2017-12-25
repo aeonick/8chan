@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<link href="/static/css/nimin006.css" rel="stylesheet">
+<script src="/static/css/nimin006.js"></script>
+<meta http-equiv="Content-Language" content="zh-cn">
+{% block title %}
+<title>树洞-匿名版</title>
+{% endblock %}
+</head>
+<body>
+<mask id="mask"></mask>
+<div class="main">
+<div class="side">
+<div id="sidebar">
+<div class="notice">入站须知</div>
+&nbsp;&nbsp;&nbsp;&nbsp;本站是一个匿名讨论社区。
+<pre>
+你可以在树洞中尽情宣泄。
+但请遵守以下规定：
+1. 禁止讨论违法内容。
+2. 禁止广告、钓鱼、色情。
+3. 禁止讨论政治相关的任何内容。
+4. 禁止发布没有任何语义的乱码。
+
+</pre>
+<div class="nav">
+<a href="/p0/1"><section class="top">
+全部版块
+</section></a><a href="/p1/1"><section>
+综合区
+</section></a><a href="/p7/1"><section>
+欢乐恶搞
+</section></a><a href="/p4/1"><section>
+问与答
+</section></a><a href="/p2/1"><section>
+垃圾场
+</section></a><a href="/p5/1"><section>
+创作
+</section></a><a href="/p6/1"><section>
+日记打卡
+</section></a><a href="/p3/1"><section>
+值班室
+</section></a>
+</div>
+<br>
+<br>
+</div></div>
+<div class="content">
+{% block content %}
+{% endblock %}
+</div>
+<br><br>
+</div>
+</body>

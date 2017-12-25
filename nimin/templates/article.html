@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}
+<title>No:{{ curArti.id }}-树洞</title>
+{% endblock %}
+{% block content %}
+<h3>>>No:{{ curArti.id }}</h3>
+<div class="form">
+<form method="POST" id="post" onSubmit="return confirm1();">
+    <input name="img" id="img" type="img" value='' placeholder="贴图地址，可留空"/>
+    <input name="quote" id="quote" type="quote" value='' hidden/>
+    <textarea name="content" id="content" rows="3" placeholder="说吧！"></textarea>
+    <br>
+    <div style="text-align:right;vertical-align:top">
+    <input name="owner" id="owner" value='{{ curArti.id }}' hidden/>
+    <input name="new" type="checkbox" value="2"/>换件马甲
+    <input name="tnow" id="tnow" value="0" hidden/>
+    <select name="section" id="section" disabled="disabled">
+        <option value = "0">回应模式</option>
+    </select>
+    <button>送出</button>
+    </div>
+</form>
+<br>
+</div>
+<hr>
+<div class="post">
+<span class="name">{{ curArti.name }}</span>
+<span class="date">{{ curArti.date }}</span>
+<a href="/t/{{ curArti.id }}/1">
+<span class="no">>>No:{{ curArti.id }}</span>
+</a>
+<div class="imgPost">
+<div class="img"></div><div class="pre">
+<pre><img hide="{{ curArti.img }}" class="lazyimg" />{{ curArti.content }}</pre>
+{%- for reply in curArti.reply %}
+<div class="reply">
+<span class="name">{{ reply[1] }}</span>
+<span class="date">{{ reply[4] }}</span>
+<a href="/dt/{{ curArti.id }}/{{ reply[0] }}"><span class="no" id="rep{{ reply[0] }}">>>No:{{ reply[0] }}</span></a>
+<div class="imgPost">
+<div class="img"></div><div class="pre">
+<pre><img hide="{{ reply[2] }}" class="lazyimg" />{{ reply[3] }}</pre>
+</div></div></div>
+{%- endfor %}
+</div>
+</div>
+</div>
+<hr>
+{%- for num in curArti.pagn %}
+<a href='{{ num[2] }}'><pagn class="{{ num[1] }}">{{ num[0] }}</pagn></a>
+{%- endfor %}
+{% endblock %}

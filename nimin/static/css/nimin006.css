@@ -1,0 +1,76 @@
+html,body{height:100%;width:100%;margin:0;background:#f0ecea;color:#444;font-family:Microsoft YaHei,Helvetica,sans-serif!important;font-size:16px;}
+*{position:relative}
+a{text-decoration:none;color:inherit;}
+a:hover{color:#000;}
+.main{width:60em;margin-left:-31em;left:50%;padding-top:1.5em}
+.side{width:14em;position:absolute;padding-left:0.6em;border-left:1.25px solid #cabcb7;border-right:1.25px solid #cabcb7;}
+.content{margin-left:16em}
+.notice{font-size:1.8em;font-weight: normal;color: #795548;}
+sh3{font-size:1em;color: #795548;text-align:right;margin-top:0.5em;font-weight:bold;display:block;margin:0.8em}
+hr{height:0;border-bottom:1.5px solid #cabcb7;border-top:none;}
+pre{white-space:pre-wrap;word-wrap:break-word;}
+.side pre{font-size:0.9em;color:#000;padding-left:0.2em}
+section{margin: 0 0.8em 0 0.2em;display: block;border-bottom: 1px solid #bbb;height: 2.2em;line-height: 2.2em;text-align: center;}
+section.top{border-top: 1px solid #bbb;}
+section:hover{background:#e1d9d6}
+pagn{display:inline-block;height:1.5em;width:1.5em;margin:0.1em;border-radius:0.75em;border:1px solid #9a7e75;color:#9a7e75;background:none;vertical-align:top;text-align:center;line-height:1.5em;font-size:1.1em;}
+pagn:hover{background:#9a7e75;color:#fff}
+pagn.active{background:#9a7e75;color:#fff}
+pagn.prev:after{content:'<'}
+pagn.next:after{content:'>'}
+limg{display:none}
+span.name{font-size: 0.95em;font-weight: bold;color: #795548;}
+span.date{font-size: 0.88em;color: #444;padding-left: 0.5em;}
+span.no{font-size: 0.9em;color: #d22215;padding-left: 0.75em;}
+span.more{font-size: 0.9em;color: #d22215;}
+span.no:hover,span.more:hover{color:#444;text-decoration:underline}
+.imgPost{margin-left:2em}
+.img{width:2em;display:inline-block;margin-left:-2em;vertical-align:middle;text-align: center;}
+pre img{padding:0;margin:0 0.3em;margin-left:-1.5em;max-height:9em;max-width:9em;float:left;display:none}
+.pre{display:inline-block;vertical-align:top;width:100%;}
+.reply{background:#e5dedb;padding:0.5em;margin:0.5em;top:0.4em;clear:both}
+.side{position:fixed}
+select,textarea,input[type="img"]{line-height:2em;border-radius:0.25em;border:1px solid #ddd;padding:0 0.4em;font-size:0.875em;color:#666;background:#FFF;}
+button{outline:none;height:2em;line-height:2em;border-radius:0.25em;border:1px solid #ddd;padding:0 0.8em;font-size:0.8em;color:#444;background:#FFF;}
+select{height:1.85em;width:10em}
+input[type="img"],textarea{width:97.8%;margin-bottom:0.4em;}
+textarea:focus{background:url("/static/img/emotion.gif");background-color:#fff}
+.form{width:80%;margin-left:10%}
+cates{font-size: 0.896em;font-weight: bold;color: #684e96;padding-left:0.6em}
+repinfo{font-style: italic;color: #7d706c;font-size:0.93em}
+repinfo:hover{text-decoration:underline;color:#795548}
+mask{position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,0.5);z-index:1000;text-align:center;display:none}
+mask span{height:100%;display:inline-block;vertical-align:middle}
+mask img{vertical-align:middle;max-width:90%;margin-top:-15px;min-width:40%;max-height:90%;}
+sh3.sh0:before{ content:"全部板块";}
+sh3.sh1:before{ content:"综合区";}
+sh3.sh2:before{ content:"垃圾场";}
+sh3.sh3:before{ content:"值班室";}
+sh3.sh4:before{ content:"问与答";}
+sh3.sh5:before{ content:"创作";}
+sh3.sh6:before{ content:"日记打卡";}
+sh3.sh7:before{ content:"欢乐恶搞";}
+cates.cate1:before{ content:"综合区";}
+cates.cate2:before{ content:"垃圾场";}
+cates.cate3:before{ content:"值班室";}
+cates.cate4:before{ content:"问与答";}
+cates.cate5:before{ content:"创作";}
+cates.cate6:before{ content:"日记打卡";}
+cates.cate7:before{ content:"欢乐恶搞";}
+
+@media only screen and (min-width: 1921px){body{font-size:26px;}}
+@media only screen and (max-width: 1010px){.main{width:100%;margin:0;left:0}}
+@media only screen and (min-width: 1281px) and (max-width: 1920px){body{font-size:1.25vw;}}
+@media only screen and (min-width: 500px) and (max-width: 680px){
+    .side{width:30%;}
+    .content{margin-left:34%}
+    .form{width:96%;margin-left:2%}
+}
+@media only screen and (max-width: 500px){
+    .side{width:auto;border:none;position:relative;margin-bottom:-4em}
+    .content{margin:0 0.4em}
+    .nav{position:fixed;right:0;padding:0;top:0;left:0;z-index:10;background:#e0d7d4;}
+    .nav a{display:inline-block;width:auto;overflow:hidden;text-align:center;border-right:1px solid #cfc2be}
+    section,section.top{height:1.5em;line-height:1.5em;border:none;margin-left:0.8em}
+    .form{width:98%;margin-left:1%}
+}

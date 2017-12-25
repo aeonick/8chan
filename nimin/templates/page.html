@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}
+<title>树洞</title>
+{% endblock %}
+{% block content %}
+<sh3 class="sh{{ sid }}"></sh3>
+<div class="form">
+<form method="POST" id="post" onSubmit="return confirm0();">
+    <input name="img" id="img" type="img" value='' placeholder="贴图地址，可留空"/>
+    <input name="quote" id="quote" type="quote" value='' hidden/>
+    <textarea name="content" id="content" rows="3" placeholder="说吧！"></textarea>
+    <br>
+    <div style="text-align:right;vertical-align:top">
+    <input name="owner" id="owner" value='0' hidden/>
+    <input name="tnow" id="tnow" value="0" hidden/>
+    <input name="new" type="checkbox" value="2"/>换件马甲
+    <select name="section" id="section">
+        <option value = "0">请选择版块</option>
+        <option value = "1">综合区</option>
+        <option value = "7">欢乐恶搞</option>
+        <option value = "4">问与答</option>
+        <option value = "2">垃圾场</option>
+        <option value = "5">创作</option>
+        <option value = "6">日记打卡</option>
+        <option value = "3">值班室</option>
+    </select>
+    <script>$(function(){$('#section').val({{ sid }});});</script>
+    <button>送出</button>
+    </div>
+</form>
+<br>
+</div>
+<hr>
+{%- for result in results %}
+<div class="post">
+<span class="name">{{ result.name }}</span>
+<span class="date">{{ result.date }}</span>
+<a href="/p{{ result.section }}/1"><cates class="cate{{ result.section }}"></cates></a>
+<a href="/t/{{ result.id }}/1">
+<span class="no">>>No:{{ result.id }}</span>
+<span>[<span class="more">详细</span>]</span>
+</a>
+<div class="imgPost">
+<div class="img"></div><div class="pre">
+<pre><img hide="{{ result.img }}" class="lazyimg" />{{ result.content }}</pre>
+<a href="/t/{{ result.id }}/1"><repinfo num={{ result.pagn }}></repinfo></a>
+{%- for reply in result.reply %}
+<div class="reply">
+<span class="name">{{ reply[1] }}</span>
+<span class="date">{{ reply[4] }}</span>
+<a href="/dt/{{ result.id }}/{{ reply[0] }}"><span class="no">>>No:{{ reply[0] }}</span></a>
+<div class="imgPost">
+<div class="img"></div><div class="pre">
+<pre><img hide="{{ reply[2] }}" class="lazyimg" />{{ reply[3] }}</pre>
+</div></div></div>
+{%- endfor %}
+</div>
+</div>
+</div>
+<hr>
+{%- endfor %}
+{%- for num in pagn %}
+<a href='{{ num[2] }}'><pagn class="{{ num[1] }}">{{ num[0] }}</pagn></a>
+{%- endfor %}
+{% endblock %}
